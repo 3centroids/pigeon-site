@@ -1,15 +1,40 @@
 ---
+import Tree from "../components/Tree.astro";
+import I from "../layouts/I.astro";
+const pageTitle = "Bądź zdrów, strudzony wędrowcze!";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<I pageTitle={pageTitle}>
+  <div class="flexbox-container">
+    <div class="image-box">
+      <img
+        src="../assets/wood_pigeon_lg.jpg"
+        alt="large image of a (male) wood pigeon"
+      />
+    </div>
+    <div class="text-box">
+      <Tree />
+    </div>
+  </div>
+</I>
+
+<style>
+  .flexbox-container {
+    display: flex;
+    flex: 1;
+    column-gap: 40px;
+  }
+
+  .image-box img {
+    width: 100%;
+  }
+
+  .image-box,
+  .text-box {
+    flex: 1;
+    display: flex;
+    object-fit: cover;
+    align-items: center;
+    justify-content: center;
+  }
+</style>

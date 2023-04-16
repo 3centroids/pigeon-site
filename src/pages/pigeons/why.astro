@@ -1,0 +1,52 @@
+---
+import Base from "../../layouts/Base.astro";
+const pageTitle = "Dlaczego gołębie?";
+
+const identity = {
+  firstName: "Michał",
+  location: "planeta Ziemia",
+  hobbies: ["algorytmika", "matematyka", "obserwowanie gołębi"],
+};
+---
+
+<Base pageTitle={pageTitle}>
+  <p>
+    Gołębie to zwierzęta, które niestety często są niedoceniane i uważane za
+    zwykłe i pospolite. Jednakże, kiedy spojrzymy na nie uważnie, zobaczymy w
+    nich niezwykłe piękno. Przede wszystkim, piękno gołębi wynika z ich
+    wyjątkowej elegancji i gracji w locie. Są one w stanie poruszać skrzydłami w
+    taki sposób, że wydają się tańczyć w powietrzu, a ich ruchy są harmonijne i
+    płynne. Kolejnym atutem gołębi jest ich piękne upierzenie. Każdy gatunek
+    gołębia ma swoją własną charakterystyczną barwę piór, a ich piękne wzory i
+    odcienie są w stanie zachwycić każdego obserwatora. Wreszcie, gołębie są
+    zwierzętami wyjątkowo inteligentnymi i społecznymi, co sprawia, że zyskują
+    szacunek i podziw ludzi, którzy je obserwują. Są one lojalne wobec swojej
+    rodziny i partnera, a także wobec swojego terytorium, co wraz z ich
+    eleganckim ruchem i pięknem upierzenia, sprawia, że są one jednymi z
+    najbardziej ujmujących stworzeń na ziemi. W związku z tym, powinniśmy
+    nauczyć się doceniać te piękne stworzenia, a także szanować ich miejsce w
+    świecie naturalnym. W końcu, gołębie są doskonałym przykładem na to, że
+    piękno i elegancja mogą znajdować się w tych miejscach, gdzie ich nie
+    oczekujemy.
+  </p>
+  <p>
+    Ta strona internetowa powstała w celu zgłębienia użyteczności
+    <i><a href="https://astro.build/">Astro framework</a></i>. Szczególnie
+    przydatna jest możliwość tworzenia obszarów interaktywności <i>Islands</i>,
+    generacji podstron z <i>Markdown</i> i tworzenia szablonów. Ukazuje, jak bardzo
+    różne gatunki gołębi można spotkać na świecie.
+  </p>
+  <p>Trochę o mnie:</p>
+  <ul>
+    <li>Nazywam się {identity.firstName}.</li>
+    <li>Zamieszkuję miejsce zwane "{identity.location}".</li>
+    {
+      identity.hobbies.length >= 3 && (
+        <li>
+          Hobby, którym się oddaję to {identity.hobbies[0]},{" "}
+          {identity.hobbies[1]}, {identity.hobbies[2]}.
+        </li>
+      )
+    }
+  </ul>
+</Base>

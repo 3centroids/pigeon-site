@@ -1,0 +1,16 @@
+---
+import "../styles/pigeon.css";
+const { frontmatter } = Astro.props;
+---
+
+<html lang="pl-PL">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.jpg" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{frontmatter.title} \ Podręczny Słownik Gołębi</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

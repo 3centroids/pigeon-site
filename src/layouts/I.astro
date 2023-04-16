@@ -1,0 +1,46 @@
+---
+import "../styles/global.css";
+const { pageTitle } = Astro.props;
+---
+
+<html lang="pl-PL">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.jpg" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="preconnect" href="https://fonts.googleapis.com/" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <title>{pageTitle} \ Podręczny Słownik Gołębi</title>
+  </head>
+  <body>
+    <h1>WITAJ</h1>
+    <div class="article">
+      <slot />
+    </div>
+  </body>
+</html>
+
+<style>
+  h1 {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 10vw;
+    z-index: 0;
+  }
+
+  html {
+    height: 100%;
+  }
+
+  body {
+    height: 100%;
+    min-height: 100%;
+  }
+
+  .article {
+    height: 100%;
+    min-height: 100%;
+    display: flex;
+  }
+</style>

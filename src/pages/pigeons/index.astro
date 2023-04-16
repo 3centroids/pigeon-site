@@ -1,0 +1,40 @@
+---
+import Base from "../../layouts/Base.astro";
+const allPosts = await Astro.glob("../pigeons/species/*.md");
+const pageTitle = "Gołębie";
+---
+
+<Base pageTitle={pageTitle}>
+  <p>
+    Gołębie są niesamowitymi stworzeniami. Od wieków były one wykorzystywane
+    przez ludzi jako nośniki wiadomości, dzięki swojej zdolności do szybkiego
+    przemieszczania się z jednego miejsca na drugie. Ale to nie tylko ich
+    praktyczna wartość czyni je tak cennymi - są one również pięknymi ptakami o
+    eleganckim locie i delikatnych piórach. Gołębie są również symbolem pokoju i
+    miłości, co czyni je jeszcze bardziej wartościowymi. Ich delikatne
+    gruchanie, przytulne kształty i pozytywne nastawienie sprawiają, że człowiek
+    czuje się spokojny i zrelaksowany w ich towarzystwie. Każdego dnia gołębie
+    przypominają nam, że powinniśmy dbać o swoją rodzinę i przyjaciół, oraz
+    pomagać innym, gdy tylko jest to możliwe. Ich zdolność do szybkiego
+    przemieszczania się z jednego miejsca na drugie przypomina nam również, jak
+    ważne jest, abyśmy byli elastyczni i dostosowywali się do zmieniających się
+    warunków w życiu. Zatem niechaj gołębie będą zawsze cenione i szanowane za
+    swoje piękno, pozytywne właściwości oraz pomoc, jaką oferują ludziom od
+    wieków.
+  </p>
+  <p>
+    Oto wykaz wybranych gatunków gołębi, które są przedstawicielami swojej
+    rodziny:
+  </p>
+  <ul>
+    {
+      allPosts.map((post) => (
+        <li>
+          <button>
+            <a href={`${post.url}/`} >{post.frontmatter.title}</a>
+          </button>
+        </li>
+      ))
+    }
+  </ul>
+</Base>
