@@ -1,6 +1,6 @@
 ---
+import PigeonList from "../../components/PigeonList.astro";
 import Base from "../../layouts/Base.astro";
-const allPosts = await Astro.glob("../pigeons/species/*.md");
 const pageTitle = "Gołębie";
 ---
 
@@ -26,15 +26,5 @@ const pageTitle = "Gołębie";
     Oto wykaz wybranych gatunków gołębi, które są przedstawicielami swojej
     rodziny:
   </p>
-  <ul>
-    {
-      allPosts.map((post) => (
-        <li>
-          <button>
-            <a href={`${post.url}/`} >{post.frontmatter.title}</a>
-          </button>
-        </li>
-      ))
-    }
-  </ul>
+  <PigeonList />
 </Base>

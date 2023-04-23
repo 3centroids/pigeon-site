@@ -5,3 +5,11 @@ const { platform, username } = Astro.props;
 <p>
   <a href={`https://www.${platform}.com/${username}`}>{platform}</a>
 </p>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+
+  a {
+    font-family: 'Space Mono', monospace;
+  }
+</style>

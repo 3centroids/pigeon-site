@@ -1,24 +1,31 @@
 ---
+import PigeonList from "./PigeonList.astro";
 ---
 
 <div class="tree-links">
+  <h2>DRZEWO NAWIGACYJNE:</h2>
   <ul>
     <li>
-      <button>
-        <a href="/">Strona Główna</a>
-      </button>
+      <a href="/">Strona Główna</a>
     </li>
     <li>
-      <button>
-        <a href="/pigeons/">Gołębie</a>
-      </button>
+      <a href="/pigeons/">Gołębie</a>
+      <PigeonList />
     </li>
     <li>
-      <button>
-        <a href="/pigeons/why/">Dlaczego gołębie</a>
-      </button>
+      <a href="/pigeons/why/">Dlaczego gołębie?</a>
     </li>
   </ul>
 </div>
 
-<style></style>
+<style>
+  li {
+    margin: 16px;
+  }
+
+  h2,
+  a {
+    color: #315361;
+    font-size: 24px;
+  }
+</style>
